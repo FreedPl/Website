@@ -1,0 +1,65 @@
+
+    /* design by FreedPL */
+
+  .firstname {
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px;
+    font-size: 50px;
+
+    
+
+}
+.homework-headline{
+    padding-left: 20px;
+    color: whitesmoke;
+    font-size: 40px;
+}
+
+.homework-figures{
+    justify-content: center;
+        display: flex;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 80px;
+        margin-bottom: 128px;
+        flex-wrap: wrap;
+      }
+      
+.hw-figura {
+    width: 350px;
+    height: 250px;
+    background-color: #343a40;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hw-name{ 
+    color: whitesmoke;
+    font-size: 30px;
+    margin-bottom: 24px;
+  }
+
+  .P{
+    color: whitesmoke;  
+  }
+
+  .hw-button{
+        background-color: black;
+        color: whitesmoke;
+        padding: 10px 30px;
+        text-decoration: none;
+        border-radius: 30px;
+        margin-top: auto;
+        display: block;
+        width: fit-content;
+        align-self: center;
+  }
+
+  .footer{
+    color: whitesmoke;
+    text-align: center;
+  }
