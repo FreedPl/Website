@@ -1,0 +1,90 @@
+body {
+    background-color: lightyellow;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.PIB{
+    padding-right: 20px;
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+}
+
+.Tema{
+    padding-right: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
+    text-align: right;
+}
+
+ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+
+    text-decoration: none;
+    color: b;
+    font-size: 20px;
+}
+
+#niv .ullli{
+    align-self: center;
+    padding: 0 20px;
+    line-height: 40px;
+    color: #AFAFAF;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#hieader{
+    text-align: center;
+    font-size: 3em;
+    color: #AFAFAF;
+    line-height: 1.1em;
+    letter-spacing: -0.04em;
+    background: white;
+}
+
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 800px;
+    margin: auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+#nav{
+    height: 50px;
+}
+
+#header{
+    height: 150px;
+}
+
+#sidebar{
+    float: right;
+    width: 300px;
+}
+
+#footer{
+    height: 70px;
+    clear: both;
+}
+
+div{
+    border: 1px solid black;
+}
