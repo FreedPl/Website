@@ -28,13 +28,14 @@
 .hw-figura {
     width: 350px;
     height: 250px;
-    background-color: #343a40;
+    background-color: rgba(52, 58, 64, 0.7);
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 24px 36px rgba(0, 0, 0, 0.6);
     color: whitesmoke;
     display: flex;
     flex-direction: column;
+
   }
 
   .hw-name{ 
