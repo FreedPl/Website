@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="UA">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основи роботи з JavaScript</title>
+
+
+    <script type="text/javascript">
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        var t = new Date();
+        document.write(checkTime(t.getHours()) + ".");
+        document.write(checkTime(t.getMinutes()) + ".");
+        document.write(checkTime(t.getSeconds()));
+    </script>
+</head>
+
+<body onLoad="checkTime()"> 
+
+    <br><br>
+
+    <script type="text/javascript">
+        var flag = 1;
+
+        function t() {
+            if (flag == 1) N.style.left = "250px";
+            if (flag == 2) N.style.left = "100px";
+            if (flag == 3) N.style.left = "200px";
+            flag = flag + 1;
+            if (flag == 4) flag = 1;
+        }
+
+        function al() {
+            alert("Инакше й бути не могло!");  
+        }
+    </script>
+
+    <a href="JavaScript:alert('УВАГА БРО');">Тикни сюди</a> <br><br>
+
+
+    <form method="post" name="form" 
+          action="JavaScript:form.e.value='Тикнули на кнопку: Заповнить';void(0);">
+        <input type="text" name="e" size="30" value="">
+        <br>
+        <input type="submit" value="Заповнить">
+        <input type="reset" value="Очистити">
+    </form>
+    
+    <br>
+
+
+    <form>
+        <input type="button" value="Кнопка" onClick="alert('Вы бунькнули на кнопку');">
+    </form>
+
+    <br>
+
+
+    Вам сподобався сайтик? <br>
+    <a href="#null" onclick="al()" style="position: relative; left: 30px;">Так</a>
+    <a href="#null" onmouseover="t()" id="N" style="position: relative; left: 40px;">Ні</a>
+
+    <script>
+        var access;
+        var age = prompt('Скільки вам рочків?', "");
+        if (age > 14) {
+            access = 'Вам більше 14';
+        } else {
+            access = 'Вам меньше 14';
+        }
+        alert(access);
+    </script>
+
+</body>
+
+</html>
