@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання на одній сторінці</title>
+</head>
+<body>
+
+    <h1>Усі завдання на одній сторінці</h1>
+
+    <h2>1. Считать кролей</h2>
+    <input type="button" onclick="countRabbits()" value="Рахування кроликів" />
+    <p id="out"></p>
+
+    <h2>2. Сума та добуток перших N натуральних чисел</h2>
+    <label for="numberInput">Введіть N:</label>
+    <input type="number" id="numberInput" min="1">
+    <button onclick="calculateSumAndProduct()">Обчислити</button>
+    <p id="resultSum"></p>
+    <p id="resultProduct"></p>
+
+    <h2>3. Непарні числа від 1 до 99</h2>
+    <button onclick="displayOddNumbers()">Показати непарні числа</button>
+    <p id="output"></p>
+
+    <h2>4. Обчислення факторіалу</h2>
+    <label for="factorialNumber">Введіть число n:</label>
+    <input type="number" id="factorialNumber" min="0" required>
+    <button onclick="calculateFactorial()">Обчислити факторіал</button>
+    <p id="resultFactorial"></p>
+
+    <h2>5. Таблиця множення</h2>
+    <div id="multiplication-table"></div>
+
+    <script>
+
+        function countRabbits() {
+            for (let i = 1; i <= 3; i++) {
+                alert("з кепки достали " + i + " кролика!");
+            }
+        }
+
+
+        function calculateSumAndProduct() {
+            const N = parseInt(document.getElementById("numberInput").value);
+
+            if (N <= 0 || isNaN(N)) {
+                document.getElementById("resultSum").textContent = "Будь ласка, введіть натуральне число більше 0.";
+                document.getElementById("resultProduct").textContent = "";
+                return;
+            }
+
+            let sum = 0, product = 1;
+            for (let i = 1; i <= N; i++) {
+                sum += i;
+                product *= i;
+            }
+
+            document.getElementById("resultSum").textContent = `Сума перших ${N} чисел: ${sum}`;
+            document.getElementById("resultProduct").textContent = `Добуток перших ${N} чисел: ${product}`;
+        }
+
+
+        function displayOddNumbers() {
+            let result = "";
+            for (let i = 1; i <= 99; i += 2) {
+                result += i + " ";
+            }
+            document.getElementById("output").textContent = result;
+        }
+
+
+        function calculateFactorial() {
+            const n = parseInt(document.getElementById('factorialNumber').value);
+            let factorial = 1;
+
+            if (n < 0) {
+                document.getElementById('resultFactorial').innerText = 
+                    "Факторіал визначений тільки для невід'ємних чисел.";
+                return;
+            }
+
+            for (let i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+
+            document.getElementById('resultFactorial').innerText = `Факторіал ${n}! = ${factorial}`;
+        }
+
+        function generateMultiplicationTable() {
+            let table = '<table border="1" cellspacing="0" cellpadding="5"><tr><th>×</th>';
+            
+            for (let i = 1; i <= 10; i++) {
+                table += `<th>${i}</th>`;
+            }
+            table += '</tr>';
+
+            for (let i = 1; i <= 10; i++) {
+                table += `<tr><th>${i}</th>`;
+                for (let j = 1; j <= 10; j++) {
+                    table += `<td>${i * j}</td>`;
+                }
+                table += '</tr>';
+            }
+
+            table += '</table>';
+            document.getElementById('multiplication-table').innerHTML = table;
+        }
+
+        window.onload = generateMultiplicationTable;
+
+
+        let out = document.getElementById('out');
+        let tmp = '';
+        for (let i = 4; i <= 400; i++) {
+            tmp += i + ' ';
+        }
+        out.innerHTML = tmp;
+    </script>
+
+    <li><a href="Homework6.html">Головна сторінка</a></li>
+
+
+</body>
+</html>
