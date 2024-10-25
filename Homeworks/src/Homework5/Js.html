@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання: Різні Функції</title>
+</head>
+<body>
+
+    <h2>Завдання 1: Обнулення другого числа</h2>
+    <button onclick="task1()">Виконати завдання 1</button>
+
+    <h2>Завдання 2: Пошук мінімального та максимального</h2>
+    <button onclick="task2()">Виконати завдання 2</button>
+
+    <h2>Завдання 3: Квадрати додатних чисел</h2>
+    <button onclick="task3()">Виконати завдання 3</button>
+
+    <h2>Завдання 4: Розв'язання квадратного рівняння</h2>
+    <button onclick="task4()">Виконати завдання 4</button>
+
+    <h2>Завдання 5: Авторизація</h2>
+    Логін: <input type="text" id="login"><br> 
+    Пароль: <input type="password" id="password"><br>
+    <button type="button" onclick="task5()">Увійти</button>
+
+    <h2>Завдання 6: Визначення під'їзду</h2>
+    Номер квартири: <input type="text" id="flat"><br>
+    <button id="calc">Перевірити під'їзд</button>
+
+    <script>
+        function task1() {
+            let a = prompt("Введіть перше число:");
+            let b = prompt("Введіть друге число:");
+            if (parseFloat(b) > parseFloat(a)) {
+                b = 0;
+            }
+            alert("Друге число: " + b);
+        }
+
+        function task2() {
+            let numbers = prompt("Введіть три числа через кому:").split(',').map(Number);
+            let min = Math.min(...numbers);
+            let max = Math.max(...numbers);
+            alert("Найменше: " + min + ", Найбільше: " + max);
+        }
+
+        function task3() {
+            let numbers = prompt("Введіть три числа через кому:").split(',').map(Number);
+            let result = numbers.map(num => num >= 0 ? Math.pow(num, 2) : num);
+            alert("Результат: " + result.join(", "));
+        }
+
+        function task4() {
+            let a = parseFloat(prompt("Введіть значення a:"));
+            let b = parseFloat(prompt("Введіть значення b:"));
+            let c = parseFloat(prompt("Введіть значення с:"));
+            let discriminant = b * b - 4 * a * c;
+
+            if (discriminant > 0) {
+                let x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                let x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                alert("Корені рівняння: x1 - " + x1 + ", x2 - " + x2);
+            } else if (discriminant === 0) {
+                let x = -b / (2 * a);
+                alert("Корінь рівняння: x = " + x);
+            } else {
+                alert("Рівняння не має дійсних коренів.");
+            }
+        }
+
+        function task5() {
+            let login = document.getElementById('login').value;
+            let password = document.getElementById('password').value;
+
+            if ((login === "ivan" && password === "334455") ||
+                (login === "alex" && password === "7777") ||
+                (login === "petro" && password === "b5678")) {
+                alert("Ласкаво просимо!");
+            } else {
+                alert("Помилка введення");
+            }
+        }
+
+        document.getElementById('calc').onclick = function() {
+            let flat = document.getElementById('flat').value;
+            flat = parseInt(flat);
+
+            if (flat >= 1 && flat <= 20) alert('Перший під\'їзд');
+            else if (flat >= 21 && flat <= 48) alert('Другий під\'їзд');
+            else if (flat >= 49 && flat <= 90) alert('Третій під\'їзд');
+            else alert('Помилка! Повторіть введення');
+        };
+    </script>
+
+
+    <li><a href="Homework5.html">Головна сторінка</a></li>
+</body>
+</html>
